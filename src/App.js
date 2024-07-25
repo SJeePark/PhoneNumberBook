@@ -13,16 +13,27 @@ import ContactList from './component/ContactList';
 function App() {
   return (
     <div>
-      <h1>Phone Book</h1>
+    <h1>Phone Book</h1>
+    <div className='content'>
       <Container>
         <Row>
-          <Col><ContactForm /></Col>
-          <Col><ContactList /></Col>
+          <Col lg={4}>
+          <ContactForm />
+          </Col>
+          <Col lg={8}>
+          <ContactList />
+          </Col>
         </Row>
       </Container>
+    </div>
     </div>
   );
 }
 
 export default App;
  
+
+
+// 이름 가나다순으로 정렬되면 좋을 듯
+// 빈칸이면 추가 불가
+// 숫자 8자리 이내
