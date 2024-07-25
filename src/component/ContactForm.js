@@ -32,7 +32,7 @@ const ContactForm = () => {
         placeholder="번호를 입력해주세요" 
         onChange={(event)=>setPhoneNumber(event.target.value)}/>
       </Form.Group>
-      <Button className='button' type="submit" >
+      <Button className='button' type="submit" disabled={phoneNumber==="" || name===""?true:false}>
         +
       </Button>
     </Form>
