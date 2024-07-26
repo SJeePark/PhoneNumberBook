@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const SerachBox = () => {
   let [keyword, setKeyword] = useState("");
   let dispatch = useDispatch();
-  let { contact } = useSelector((state) => state);
   const searchByName = (event) => {
     event.preventDefault();
     dispatch({ type: "SEARCH_BY_USERNAME", payload: { keyword } });
@@ -20,13 +19,15 @@ const SerachBox = () => {
         placeholder="이름을 입력해주세요" />
         </Col>
         <Col>
-        <Button className='button' lg={1}><img src='https://cdn-icons-png.flaticon.com/512/1786/1786987.png' width={'15px'} ></img></Button>
+        <Button className='button' lg={1} onClick={searchByName}>
+          <img src='https://cdn-icons-png.flaticon.com/512/1786/1786987.png' width={'15px'} alt='search-icon' />
+        </Button>
         </Col>
     </Row>
   )
 }
 
-export default SerachBox
+export default SerachBox;
 
 
 // 1. 검색어 입력받기
